@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html mlns:th="http://www.thymeleaf.org">
+<script>
+  function reserve(){
+    var array = new Array();
+    var date = $("select[name=selects]").val();
+    $("#reserveDate").val(date);
+    var form = document.querySelector("#reserveForm");
+    form.action = "/health/index";
+    form.method = "POST";
+    form.submit();
+  }
+</script>
+  <th:block th:replace="~{/layout/layout :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+      <section class="home-slider inner-page owl-carousel">
+        <div
+          class="slider-item"
+          style="background-image: url('/img/tslider.jpg')"
+        >
+          <div class="container">
+            <div
+              class="
+                row
+                slider-text
+                align-items-center
+                justify-content-center
+                text-center
+              "
+            >
+              <div class="col-md-7 col-sm-12 element-animate">
+                <h1>나만의 트레이너</h1></div>
+              
+              </div >
+            </div>
+          </div>
+        
+      </section>
+      <!-- END slider -->
+<!-- 배너 끝 -->
+
+<th:block th:each="dto : ${trainers}">
+        <section class="section">
+          <div class="container">
+            <div class="row mb-5">
+              <div class="col-md-6 order-lg-3 mb-5">
+                <img th:src="@{${dto.TImageUrl}}" alt="Image placeholder" class="img-fluid">
+              </div>
+              <div class="col-md-1 order-lg-2"></div>
+              <div class="col-md-5 order-lg-1">
+                <h1 name="TName">[[${dto.TName}]]</h1>
+                <h5 class="text-uppercase heading mb-4">[[${dto.Tworktime}]]</h5>
+                <div>[[${dto.TCareer1}]]</div>
+                <div>[[${dto.TCareer2}]]</div>
+                <div>[[${dto.TCareer3}]]</div>
+                <div>[[${dto.TCareer4}]]</div>
+                <div>[[${dto.TCareer5}]]</div>
+                <div>[[${dto.TCareer6}]]</div>
+                <div><br><br>
+                  <h5 for="message">Select Time</h5>
+                  <th:block th:if="${dto.Tworktime} == 'Atime(04:00~16:00)'">
+                    <select name = "selects" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <option selected>시간대를 선택하세요</option>
+                      <option value="04:00 ~ 05:00" name ="selectDate" id ="selectDate">04:00 ~ 05:00</option>
+                      <option value="05:00 ~ 06:00" name ="selectDate" id ="selectDate">05:00 ~ 06:00</option>
+                      <option value="06:00 ~ 07:00" name ="selectDate" id ="selectDate">06:00 ~ 07:00</option>
+                      <option value="07:00 ~ 08:00" name ="selectDate" id ="selectDate">07:00 ~ 08:00</option>
+                      <option value="08:00 ~ 09:00" name ="selectDate" id ="selectDate">08:00 ~ 09:00</option>
+                      <option value="09:00 ~ 10:00" name ="selectDate" id ="selectDate">09:00 ~ 10:00</option>
+                      <option value="10:00 ~ 11:00" name ="selectDate" id ="selectDate">10:00 ~ 11:00</option>
+                      <option value="11:00 ~ 12:00" name ="selectDate" id ="selectDate">11:00 ~ 12:00</option>
+                      <option value="12:00 ~ 13:00" name ="selectDate" id ="selectDate">12:00 ~ 13:00</option>
+                      <option value="13:00 ~ 14:00" name ="selectDate" id ="selectDate">13:00 ~ 14:00</option>
+                      <option value="14:00 ~ 15:00" name ="selectDate" id ="selectDate">14:00 ~ 15:00</option>
+                      <option value="15:00 ~ 16:00" name ="selectDate" id ="selectDate">15:00 ~ 16:00</option>
+                    </select>
+                  </th:block>
+                  <th:block th:unless="${dto.Tworktime} == 'Atime(04:00~16:00)'">
+                    <select name = "selects" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <option selected>시간대를 선택하세요</option>
+                      <option value="16:00 ~ 17:00" name ="selectDate" id ="selectDate">16:00 ~ 17:00</option>
+                      <option value="17:00 ~ 18:00" name ="selectDate" id ="selectDate">17:00 ~ 18:00</option>
+                      <option value="18:00 ~ 19:00" name ="selectDate" id ="selectDate">18:00 ~ 19:00</option>
+                      <option value="19:00 ~ 20:00" name ="selectDate" id ="selectDate">19:00 ~ 20:00</option>
+                      <option value="20:00 ~ 21:00" name ="selectDate" id ="selectDate">20:00 ~ 21:00</option>
+                      <option value="21:00 ~ 22:00" name ="selectDate" id ="selectDate">21:00 ~ 22:00</option>
+                      <option value="22:00 ~ 23:00" name ="selectDate" id ="selectDate">22:00 ~ 23:00</option>
+                      <option value="23:00 ~ 24:00" name ="selectDate" id ="selectDate">23:00 ~ 24:00</option>
+                    </select>
+                  </th:block>
+                </div>
+                <form id="reserveForm">
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <br>
+                    <h5 for="message">Write Message</h5>
+                    <textarea name="reserveComment" id="message" class="form-control form-control-lg" cols="30" rows="8"></textarea>
+                  </div>
+                </div>
+                  <input type="hidden" name="reserveTrainerName" th:value="${dto.TName}"/>
+                  <input type="hidden" id="reserveDate" name="reserveDate"/>
+                  <div>
+                    <button style = float:right type="button"  class="btn btn-secondary btn-lg" onclick="reserve()"/>예약하기
+                  </div>
+                </form>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+      </th:block>
+    </th:block>
+  </th:block>
+</html>

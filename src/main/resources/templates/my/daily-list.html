@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html mlns:th="http://www.thymeleaf.org">
+  <th:block th:replace="~{/layout/layout :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+      <head>
+        <script type="text/javascript" src="/js/list.js"></script>
+      </head>
+      <section class="home-slider inner-page owl-carousel">
+        <div
+          class="slider-item"
+          style="background-image: url('/img/mydataimage/plan.jpg')"
+        >
+          <div class="container">
+            <div
+              class="
+                row
+                slider-text
+                align-items-center
+                justify-content-center
+                text-center
+              "
+            >
+              <div class="col-md-7 col-sm-12 element-animate"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- END slider -->
+      <!-- //섹션 - 추가시키는 칸들 이름 입력// -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div style="color: blue">&nbsp; Date 21/06/18</div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">TYPE</th>
+                    <th scope="col">WEIGHT</th>
+                    <th scope="col">REPS</th>
+                    <th scope="col">SET</th>
+                    <th scope="col">RPE</th>
+                    <th scope="col">REST</th>
+                  </tr>
+                </thead>
+              </table>
+              <div id="dailieslist"></div>
+              <form id="saveForm">
+                <div class="row"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <h2 class="text-uppercase heading border-bottom mb-4">Search</h2>
+              <div id="dailieslist"></div>
+              <form id="saveForm">
+                <div class="row"></div>
+              </form> -->
+    </th:block>
+  </th:block>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mini.health.dao.DailyDao">
+
+	<select id="getDailiesList" resultType="com.mini.health.dto.Daily" >
+		
+            SELECT C_DATE, C_WEIGHT,  C_REPS,  C_SET,  C_RPE,  C_REST,  C_TYPE, C_MESSAGE, C_NUMBER 
+                FROM CUSTOMER WHERE C_ID = #{C_ID}
+                GROUP BY C_DATE, C_WEIGHT,  C_REPS,  C_SET,  C_RPE,  C_REST,  C_TYPE, C_MESSAGE, C_NUMBER
+                ORDER BY C_DATE DESC
+	</select>
+
+    <insert id="insertDaily" parameterType="com.mini.health.dto.Daily">
+        INSERT INTO CUSTOMER (C_ID, C_WEIGHT,  C_REPS,  C_SET,  C_RPE,  C_REST,  C_TYPE, C_MESSAGE, C_DATE, C_NUMBER) 
+        VALUES (#{C_ID}, #{C_WEIGHT}, #{C_REPS}, #{C_SET}, #{C_RPE}, #{C_REST}, #{C_TYPE}, #{C_MESSAGE}, sysdate, COMMENT_SEQ.NEXTVAL)
+    </insert>
+</mapper>

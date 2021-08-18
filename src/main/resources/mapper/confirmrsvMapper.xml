@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.health.dao.TrainerDao">
+    <select id="confirm" resultType="com.mini.health.dto.RsvDto">
+		SELECT R_UID as reserveUserId, R_TID as reserveTrainerName, R_DATE as reserveDate, R_COMMENT as reserveComment, R_CANCEL as reserveCancel FROM RESERVE WHERE R_UID = #{id} ORDER BY R_NUM desc
+	</select>
+</mapper>

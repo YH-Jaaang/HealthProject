@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.mini.health.dao.TrainerDao">
+
+    <select id="getTrainermatch" parameterType="Hashmap" resultType="com.mini.health.dto.Trainer">
+        SELECT t_name as TName, t_career1 as TCareer1, t_career2 as TCareer2, t_career3 as TCareer3, t_career4 as TCareer4, t_career5 as TCareer5, t_career6 as TCareer6, t_imageurl as TImageUrl, t_worktime as Tworktime FROM TRAINER WHERE ${exer0} IS NOT NULL and ${exer1} IS NOT NULL
+    </select>
+
+</mapper>

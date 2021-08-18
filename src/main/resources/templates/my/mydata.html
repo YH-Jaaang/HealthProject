@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html mlns:th="http://www.thymeleaf.org">
+  <th:block th:replace="~{/layout/layout :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+      <head>
+        <script type="text/javascript" src="/js/data.js"></script>
+      </head>
+      <section class="home-slider inner-page owl-carousel">
+        <div
+          class="slider-item"
+          style="background-image: url('/img/mydataimage/mydataimage2.jpg')"
+        >
+          <div class="container">
+            <div
+              class="
+                row
+                slider-text
+                align-items-center
+                justify-content-center
+                text-center
+              "
+            >
+              <div class="col-md-7 col-sm-12 element-animate">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- END slider -->
+      <!-- //섹션 - 추가시키는 칸들 이름 입력// -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <form id="saveForm">
+                <div class="row">
+                <th:block>
+                    <input type="hidden" name="C_ID" class="form-control form-control-lg" th:value="${session.id}">
+                  </th:block>
+                  <div class="col-md-6 form-group">
+                    <label for="fname">Weight</label>
+                    <input type="text" name="C_WEIGHT" class="form-control form-control-lg" id="fname" >
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="lname">Reps</label>
+                    <input type="text" name="C_REPS" class="form-control form-control-lg" id="lname">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="lname">Set</label>
+                    <input type="text" name="C_SET" class="form-control form-control-lg" id="lname">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="lname">RPE</label>
+                    <input type="text" name="C_RPE" class="form-control form-control-lg" id="lname">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="lname">Rest-minute</label>
+                    <input type="text" name="C_REST" class="form-control form-control-lg" id="lname">
+                  </div>
+                  <!-- <div class="col-md-6 form-group">
+                    <label for="lname">DATE</label>
+                    <input type="text" name="C_DATE" class="form-control form-control-lg" id="lname">
+                  </div> -->
+                  <!-- <div class="col-md-6 form-group">
+                    <label for="lname">number</label>
+                    <input type="text" name="C_NUMBER" class="form-control form-control-lg" id="lname">
+                  </div> -->
+                  <div class="col-md-6 form-group">
+                    <label for="lname">Type of exercise</label>
+                    <input type="text" name="C_TYPE" class="form-control form-control-lg" id="lname">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <label for="message">Write Message</label>
+                    <textarea name="C_MESSAGE" id="message" class="form-control form-control-lg" cols="30" rows="8"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <button  onclick="saveDaily()" class="btn btn-secondary" id="btnright">SUBMIT</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </th:block>
+  </th:block>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.health.dao.SearchDao">
+    <select id="best" resultType="com.mini.health.dto.BestDto">
+        SELECT ROW_NUMBER() OVER(ORDER BY E_SEARCHCOUNT DESC) as bestNum, E_NAME as bestName, E_INFORMATION as bestInfo, E_IMAGEURL as bestImage FROM EXERCISE ORDER BY E_SEARCHCOUNT DESC
+	</select>
+    <select id="exercise" resultType="com.mini.health.dto.ExerciseDto">
+        SELECT E_NAME as exerciseName,E_INFORMATION as exerciseInfo, E_YOUTUBEURL as exerciseYoutubeUrl FROM  EXERCISE WHERE E_NAME LiKE '%' || #{exercise} || '%'
+	</select>
+    <update id="searchcount" parameterType="string">
+        UPDATE EXERCISE SET E_SEARCHCOUNT = E_SEARCHCOUNT + 1 WHERE E_NAME = #{exercise}
+    </update>
+</mapper>

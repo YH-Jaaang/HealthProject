@@ -1,0 +1,125 @@
+!<!DOCTYPE html>
+<head>
+  <script type ="text/javascript">
+    var maxCount = 2; // 카운트 최대값은 2
+    var count = 0; // 카운트, 0으로 초기화 설정
+
+function countcheck(field) {
+  // field객체를 인자로 하는 CountChecked 함수 정의
+  if (field.checked) {
+    // 만약 field의 속성이 checked 라면(사용자가 클릭해서 체크상태가 된다면)
+    count += 1; // count 1 증가
+  } else {
+    // 아니라면 (field의 속성이 checked가 아니라면)
+    count -= 1; // count 1 감소
+  }
+
+  if (count > maxCount) {
+    // 만약 count 값이 maxCount 값보다 큰 경우라면
+    alert("최대 2개까지만 선택가능합니다!"); // alert 창을 띄움
+    field.checked = false; // (마지막 onclick한)field 객체의 checked를 false(checked가 아닌 상태)로 만든다.
+    count -= 1; // 이때 올라갔던 카운트를 취소처리해야 하므로 count를 1 감소시킨다.
+  }
+}
+
+function onlyone(element) {
+  const checkboxes = document.getElementsByName("one");
+
+  checkboxes.forEach((cb) => {
+    cb.checked = false;
+  });
+
+  element.checked = true;
+}
+// -----------------------------
+function onlytwo(element) {
+  const checkboxes = document.getElementsByName("two");
+
+  checkboxes.forEach((cb) => {
+    cb.checked = false;
+  });
+
+  element.checked = true;
+}
+</script>
+</head>
+<html mlns:th="http://www.thymeleaf.org">
+  <th:block th:replace="~{/layout/layout :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+      <section class="home-slider inner-page owl-carousel">
+        <div
+          class="slider-item"
+          style="background-image: url('/img/trainerslider.jpg')"
+        >
+          <div class="container">
+            <div
+              class="
+                row
+                slider-text
+                align-items-center
+                justify-content-center
+                text-center
+              "
+            >
+              <div class="col-md-7 col-sm-12 element-animate">
+                <h1></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- END slider -->
+      <section class="section">
+          <div class="container">
+            <div class="row">
+              <div class="question" value = "q1">
+                  <h3>Q1 관심부위는?</h3>
+                    <ul>
+                        <!-- <input onclick="countcheck(this)" type="checkbox" name="choice" value="apple" />사과 -->
+                        <li><input type = "checkbox" name = "chk" value="t_arm" onclick="countcheck(this)">팔(이두,삼두)</li>
+                        <li><input type = "checkbox" name = "chk" value="t_leg" onclick="countcheck(this)" >하체</li>
+                        <li><input type = "checkbox" name = "chk" value="t_shoulder" onclick="countcheck(this)" >어깨</li>
+                        <li><input type = "checkbox" name = "chk" value="t_chest" onclick="countcheck(this)" >가슴</li>
+                        <li><input type = "checkbox" name = "chk" value="t_back" onclick="countcheck(this)" >등</li>
+                        <li><input type = "checkbox" name = "chk" value="t_core" onclick="countcheck(this)" >복근</li>
+                    </ul>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <div class="question" value = "q2">
+                      <h3>Q2 운동경력은?</h3>
+                      <ul>
+                          <li><input type = "checkbox" name = "one" onclick="onlyone(this)">6개월 미만</li>
+                          <li><input type = "checkbox" name = "one" onclick="onlyone(this)">6개월~ 1년</li>
+                          <li><input type = "checkbox" name = "one" onclick="onlyone(this)">1년~ 3년</li>
+                          <li><input type = "checkbox" name = "one" onclick="onlyone(this)">3년 이상</li>
+                      </ul>
+                      
+                  </div>
+                  
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <div class="question" value = "q3">
+                      <h3>Q3 운동목적은?</h3>
+                      <ul>
+                          <li><input type = "checkbox" name = "two" onclick="onlytwo(this)">다이어트</li>
+                          <li><input type = "checkbox" name = "two" onclick="onlytwo(this)">근육증가</li>
+                          <li><input type = "checkbox" name = "two" onclick="onlytwo(this)">데피니션</li>
+                          <li><input type = "checkbox" name = "two" onclick="onlytwo(this)">스트렝스</li>
+                      </ul>
+                  </div>
+              </div>
+            </div>
+            <form id="exerForm">
+              <input type="hidden" name="exer0" id="exer0"/>
+              <input type="hidden" name="exer1"  id="exer1"/>
+              <input style = float:inherit id="subtn_align" value="제출" type="button"  class="btn btn-secondary btn-lg" onclick="exercise()"/>
+            </form>
+          </div>
+      </section>
+    </th:block>
+  </th:block>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html mlns:th="http://www.thymeleaf.org">
+  <th:block th:replace="~{/layout/layout :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+      <section class="home-slider  inner-page owl-carousel">
+        <div class="slider-item" style="background-image: url('/img/gym-1.jfif');">
+          
+          <div class="container">
+            <div class="row slider-text align-items-center justify-content-center text-center">
+              <div class="col-md-7 col-sm-12 element-animate">
+                <h1>WELCOME TO PIVOT</h1>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </section>
+      <!-- END slider -->
+
+      <section class="section">
+        <div class="container">
+          <div class="row justify-content-center mb-5 element-animate">
+            <div class="col-md-8 text-center mb-5">
+              <h2 class="text-uppercase heading border-bottom mb-4">Search</h2>
+                <form id = "searchEx">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="exercise" placeholder="검색할 운동명을 입력하세요" aria-label="exercise's name" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="searchExercise()">Button</button>
+                  </div>
+                </form>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 element-animate">
+              <div class="media d-block media-custom text-left">
+                <img src="/img/schedule.jpg" alt="Image Placeholder" class="img-fluid">
+                <div class="media-body">
+                  <h3 class="mt-0 text-black"><a href="../trainer/trainerlist" class="text-black">Scheduling Trainer </a></h3>  
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 element-animate">
+              <div class="media d-block media-custom text-left">
+                <img src="/img/top.jpg" alt="Image Placeholder" class="img-fluid">
+                <div class="media-body">
+                  <h3 class="mt-0 text-black"><a href="../search/best" class="text-black">TOP5 Exercise</a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 element-animate">
+              <div class="media d-block media-custom text-left">
+                <img src="/img/log.jpg" alt="Image Placeholder" class="img-fluid">
+                <div class="media-body">
+                  
+                  <h3 class="mt-0 text-black"><a href="../my/daily-list" class="text-black">MY Exercise Log</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row justify-content-center mb-5 element-animate">
+            <div class="col-md-8 text-center mb-6">
+              <h2 class="text-uppercase heading border-bottom mb-4">MAP</h2>
+                  <div class="input-group mb-12">
+                    <div id="map" style="width:800px;height:600px;"></div>
+                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=66bd072989c3d01535d32b3820e4f0d6"></script>
+                <script>
+                    var container = document.getElementById('map');
+                    var options = {
+                        center: new kakao.maps.LatLng(37.480791459732714, 126.88215971614319),
+                        level: 3
+                    };
+             
+                    var map = new kakao.maps.Map(container, options);
+                    var markerPosition  = new kakao.maps.LatLng(37.480791459732714, 126.88215971614319);
+                    var marker = new kakao.maps.Marker({
+                      position: markerPosition
+                    });
+                    marker.setMap(map);
+                  </script>
+                    </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      
+    </th:block>
+  </th:block>
+</html>

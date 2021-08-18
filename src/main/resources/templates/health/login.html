@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript">
+  function modal(){
+    var modal = $('.modal');
+    modal.modal('show')
+    // location.href="/mm/,,"
+  }
+</script>
+<script type="text/javascript" src="/js/login.js"></script>
+  <th:block th:replace="~{/layout/layout :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+      <section class="section">
+        <div class="container">
+            <form  id=loginForm>
+                <div class="mb-3">
+                  <label class="form-label">ID</label>
+                  <input type="text" class="form-control" name="id" >
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control" name="pass">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <a onclick="modal()">signup</a>
+                <button type="button" class="btn btn-secondary" onclick="login()">로그인</button>
+              </form>
+              <div><br></div>
+              <h4 id="h1red" th:if="${dbAlert} == '1'" th:text ="${'존재하지 않는 회원입니다. 회원가입해주세요.'}"></h4>
+              <h4 id="h1red" th:if="${dbAlert} == '2'" th:text ="${'비밀번호를 다시 입력해주세요.'}"></h4>
+        </div>
+      </section>
+    </th:block>
+  </th:block>
+</html>

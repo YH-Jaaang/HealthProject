@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <th:block th:replace="~{/layout/layout :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+      <section class="home-slider inner-page owl-carousel">
+        <div
+          class="slider-item"
+          style="background-image: url('/img/trainerslider.jpg')"
+        >
+          <div class="container">
+            <div
+              class="
+                row
+                slider-text
+                align-items-center
+                justify-content-center
+                text-center
+              "
+            >
+            <!-- h1 수정했음 -->
+              <div>
+                <h1>Personal Trainer Matching</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- END slider -->
+      <!-- 버튼 온클릭 이벤트해야함 0616 -->
+      <section class="section border-t">
+        <div class="container">
+         <p> 
+          <div>
+           <button style = float:right type="button"  class="btn btn-secondary btn-lg" onclick="location.href='survey'"/>방문 전 상담하기
+          </div>
+
+          <div>
+            <h4>저희 체인짐은 회원님의 목적에 가장 잘 맞는 트레이너를 매칭해드리고 있습니다. </h4>
+          </div>
+        </p>
+<section class="section bg-light">
+  <!-- 추천트레이너 상담 바로 위 콘테이너 -->
+  <!-- 아래 div는 조금 허전해서 element를 좀 추가하는게 나을듯 -->
+  <div class="container">
+    <div class="row justify-content-center mb-5 element-animate">
+      <div class="col-md-8 text-center">
+        <h2 class="text-uppercase heading border-bottom mb-4">추천 트레이너 상담은 <br>
+          010-8544-7032</h2>
+      </div>
+    </div>
+
+    <div id = "trainer-list-group">
+    <div class="row element-animate">
+      <div class="major-caousel js-carousel-1 owl-carousel">
+
+        <!-- trainerlist에서 사진 클릭시 trainermatch탭으로 이동 -->
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>차세훈</h3>
+            <span class="icon">
+             
+                - NASM-GFS (미국공인 골프피트니스전문가)<br>
+                - 재활트레이닝전문가 Lv1<br>
+                - CES KOREA 퍼스널 트레이너<br>
+                - 블랙롤 국제 자격증<br>
+                - IKFF 케틀벨 CKT1<br>
+                - Flexible Steel lv1<br>
+                - 파워플레이트 lv1<br>
+                - 럼블롤러 lv1<br>
+                - 프리스팀 연부조직 이완술<br>
+                - 2018 NABBA 톤 피규어 2위<br>
+               
+            </span>
+            <img src="/img/trainer/image1.jpg" alt="Image placeholder" class="img-fluid">
+          </a>  
+        </div>
+        <!-- item -->
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>조규관</h3>
+            <span class="icon">
+              <div>
+                - 체육지도자 보디빌딩 3급<br>
+
+                - 운동처방사교육 수료<br>
+                
+                - 스포츠 영양사 교육 수료<br>
+                
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                
+                - 휠체어 농구 심판 3급<br>
+                
+                - 장애인역도 심판 3급<br>
+                
+                - I.F.S.H 스포츠 테이핑/스포츠 마사지 자격<br>
+                
+                - 한국인재 교육원 해부학 교육 수료<br>
+                
+                - 재활운동처방사 자격 취득<br>
+                
+
+              </div>
+    
+            </span>
+            <img src="/img/trainer/image2.jpg" alt="Image placeholder" class="img-fluid">
+          </a>
+        </div>
+        <!-- item -->
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>김형욱</h3>
+            <span class="icon">
+              <div>
+              - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+              - 생활체육지도사 2급(보디빌딩)<br>
+              - NASM-CES (미국공인 교정운동전문가)<br>
+              - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+              - 스포츠 영양사 교육 수료<br>
+              - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+              - 근골격계 해부학 교육 수료<br>
+            </div>
+              
+            </span>
+            <img src="/img/trainer/image3.jpg" alt="Image placeholder" class="img-fluid">
+          </a>
+        </div>
+        <!-- item -->
+
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>조성구</h3>
+            <span class=" icon">
+              <div>
+              - 2018 PCA 에슬레틱 피규어 3위<br>
+              - 휠체어 농구 심판 3급<br>
+              - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+              - 생활체육지도사 2급(보디빌딩)<br>
+              - NASM-CES (미국공인 교정운동전문가)<br>
+              - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+              - 스포츠 영양사 교육 수료<br>
+              - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+              - 근골격계 해부학 교육 수료<br>
+            </div>
+            </span>
+            <img src="/img/trainer/image4.jpg" alt="Image placeholder" class="img-fluid">
+          </a>  
+        </div>
+        <!-- item -->
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+           
+            <h3>전관우</h3>
+            <span class="icon">
+              <div>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+
+              </div>
+            </span>
+            <img src="/img/trainer/image5.jpg" alt="Image placeholder" class="img-fluid">
+          </a>
+        </div>
+        <!-- item -->
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>장윤석</h3>
+            <span class="icon">
+              <div>
+                - 2018 PCA 에슬레틱 피규어 3위<br>
+                - 휠체어 농구 심판 3급<br>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                - 근골격계 해부학 교육 수료<br>
+              </div>
+            </span>
+            <img src="/img/trainer/image6.jpg" alt="Image placeholder" class="img-fluid">
+          </a>
+        </div>
+        <!-- item -->
+
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>장영호</h3>
+            <span class="icon">
+              <div>
+                - 2018 PCA 에슬레틱 피규어 3위<br>
+                - 휠체어 농구 심판 3급<br>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                - 근골격계 해부학 교육 수료<br>
+              </div>
+            </span>
+            <img src="/img/trainer/image7.jpg" alt="Image placeholder" class="img-fluid">
+          </a>  
+        </div>
+        <!-- item -->
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>이한나</h3>
+            <span class="icon">
+              <div>
+                - 2018 PCA 에슬레틱 피규어 3위<br>
+                - 휠체어 농구 심판 3급<br>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                - 근골격계 해부학 교육 수료<br>
+              </div>
+            </span>
+            <img src="/img/trainer/image8.jpg" alt="Image placeholder" class="img-fluid">
+          </a>
+        </div>
+        <!-- item -->
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>이유정</h3>
+            <span class="icon">
+              <div>
+                - 2018 PCA 에슬레틱 피규어 3위<br>
+                - 휠체어 농구 심판 3급<br>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                - 근골격계 해부학 교육 수료<br>
+              </div>
+            </span>
+            <img src="/img/trainer/image9.jpg" alt="Image placeholder" class="img-fluid">
+          </a>
+        </div>
+        <!-- item -->
+
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>우영하</h3>
+            <span class="icon">
+              <div>
+                - 2018 PCA 에슬레틱 피규어 3위<br>
+                - 휠체어 농구 심판 3급<br>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                - 근골격계 해부학 교육 수료<br>
+              </div>
+            </span>
+            <img src="/img/trainer/image10.jpg" alt="Image placeholder" class="img-fluid">
+          </a>  
+        </div>
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>왕태현</h3>
+            <span class="icon">
+              <div>
+                - 2018 PCA 에슬레틱 피규어 3위<br>
+                - 휠체어 농구 심판 3급<br>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                - 근골격계 해부학 교육 수료<br>
+              </div>
+            </span>
+            <img src="/img/trainer/image11.jpg" alt="Image placeholder" class="img-fluid">
+          </a>  
+        </div>
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>오세원</h3>
+            <span class="icon">
+              <div>
+                - 2018 PCA 에슬레틱 피규어 3위<br>
+                - 휠체어 농구 심판 3급<br>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                - 근골격계 해부학 교육 수료<br>
+              </div>
+            </span>
+            <img src="/img/trainer/image12.jpg" alt="Image placeholder" class="img-fluid">
+          </a>  
+        </div>
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>김대영</h3>
+            <span class="icon">
+              <div>
+                - 2018 PCA 에슬레틱 피규어 3위<br>
+                - 휠체어 농구 심판 3급<br>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                - 근골격계 해부학 교육 수료<br>
+              </div>
+            </span>
+            <img src="/img/trainer/image13.jpg" alt="Image placeholder" class="img-fluid">
+          </a>  
+        </div>
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>강민송</h3>
+            <span class="icon">
+              <div>
+                - 2018 PCA 에슬레틱 피규어 3위<br>
+                - 휠체어 농구 심판 3급<br>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                - 근골격계 해부학 교육 수료<br>
+              </div>
+            </span>
+            <img src="/img/trainer/image14.jpg" alt="Image placeholder" class="img-fluid">
+          </a>  
+        </div>
+        <div>
+          <a href="trainermatch" class="link-thumbnail">
+            <h3>양성희</h3>
+            <span class="icon">
+              <div>
+                - 2018 PCA 에슬레틱 피규어 3위<br>
+                - 휠체어 농구 심판 3급<br>
+                - 前 서울스포츠클럽, 바디스타 휘트니스, 휘트니스 클리닉 퍼스널 트레이너 근무<br>
+                - 생활체육지도사 2급(보디빌딩)<br>
+                - NASM-CES (미국공인 교정운동전문가)<br>
+                - NASM-CPT (미국공인 퍼스널 트레이너)<br>
+                - 스포츠 영양사 교육 수료<br>
+                - 대한 카누연맹 라이프가드 및 레프팅 가이드<br>
+                - 근골격계 해부학 교육 수료<br>
+              </div>
+            </span>
+            <img src="/img/trainer/image15.jpg" alt="Image placeholder" class="img-fluid">
+          </a>  
+        </div>
+        <!-- item -->
+   
+        
+      </div>
+      <!-- END slider -->
+    </div>
+    </div>
+  </div>
+</section>
+
+
+        </div>
+      </section>
+      <!-- END section -->
+    </th:block>
+  </th:block>
+</html>
