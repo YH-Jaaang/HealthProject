@@ -53,7 +53,6 @@ public class MainController {
     }
     @PostMapping("/login")
 	public String login(@RequestParam("id") String id, @RequestParam("pass") String pass, RedirectAttributes redirect,HttpSession session) {
-        System.out.println("dds");
         return loginService.login(id,pass,redirect,session);
 	}
 }
